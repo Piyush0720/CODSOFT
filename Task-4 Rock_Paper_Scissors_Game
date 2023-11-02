@@ -1,0 +1,58 @@
+import random
+
+def users_choice():
+    user_choice = input('Please Enter Your Choice From (rock, paper, scissors): ').lower()
+    while user_choice not in ['rock', 'paper', 'scissors']:
+        print('Please check your choice and give the correct choice : ')
+        user_choice = input('Please Enter Your Choice From (rock, paper, scissors): ').lower()
+    return user_choice
+
+def computers_choice():
+    computer_choice = random.choice(['rock', 'paper', 'scissors'])
+    return computer_choice
+
+def winning_move(user_choice, computer_choice):
+    if user_choice == computer_choice:
+        return 'It is a Tie!', 0
+    elif user_choice == 'rock':
+        if computer_choice == 'scissors':
+            return 'Hurrayy!! You Win.', 1
+        else:
+            return 'Computer wins this game ! ', -1
+    elif user_choice == 'paper':
+        if computer_choice == 'rock':
+            return 'Hurrayy!! You Win.', 1
+        else:
+            return 'Computer wins this game ! ', -1
+    elif user_choice == 'scissors':
+        if computer_choice == 'paper':
+            return 'Hurrayy!! You Win.', 1
+        else:
+            return 'Computer wins this game ! ', -1
+
+def main():
+    user_score = 0
+    computer_score = 0
+    
+    while True:
+        user_choice = users_choice()
+        computer_choice = computers_choice()
+    
+        print(f"Your choice : {user_choice}")
+        print(f"Computer's choice: {computer_choice}")
+    
+        result, points = winning_move(user_choice, computer_choice)
+        print(result)
+        
+        user_score += points
+        computer_score -= points
+        
+        print(f"Your Score: {user_score}")
+        print(f"Computer's score : {computer_score}")
+        
+        play_again = input("If you want to play again, enter 'yes'. Otherwise, press Enter: ").lower()
+        if play_again != 'yes':
+            break
+    
+if __name__ == "__main__":
+    main()
