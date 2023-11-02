@@ -1,0 +1,49 @@
+
+"""
+Created on Thu Nov  2 09:22:32 2023
+
+@author: Piyush
+"""
+
+#Creating a calculator
+
+def addition(a, b):
+    return a + b
+def subtraction(a, b):
+    return a - b
+def Multiplication(a, b):
+    return a*b
+def Division(a, b):
+    if  b == 0:
+        return 'Cannot divide by zero'
+    return a/b
+
+while True:
+    ch = input(' Press 1 for Addition \n Press 2 for subtraction \n Press 3 for Multiplication \n Press 4 for Division \n Press 0 to exit : \n')
+   
+    if ch == '0':
+        print('Thank you!')
+        break
+    
+    if ch in ('1','2','3','4'):
+        num1 = float (input('Enter First Number : '))
+        num2 = float (input('Enter second Number : '))
+    
+    
+    
+        if ch == '1':
+            print('The sum of the given input is : ', addition(num1, num2))
+        elif ch == '2':
+            print('The sum of the given input is : ', subtraction(num1, num2))
+        elif ch == '3':
+            print('The sum of the given input is : ', Multiplication(num1, num2))
+        elif ch == '4':
+            print('The sum of the given input is : ', Division(num1, num2))
+        else:
+            print('Press Press the valid option ! ')
+            
+            
+            
+            
+            
+             
